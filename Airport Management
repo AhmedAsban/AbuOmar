@@ -1,0 +1,559 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AirPort_Management
+{
+    // Abstract
+    abstract class Airport
+    {
+
+        public abstract void information(string name, string numberOfPlanes, string address);
+
+    }
+
+    // inheriting from abstract class which is Hotel
+    class Airport_information : Airport
+    {
+        private string _name;
+        private string _numberOfPlanes;
+        private string _address;
+
+
+        // constructor
+        public Airport_information(string name,
+            string numberOfPlanes, string address)
+        {
+            
+            this._name = name;
+            this._numberOfPlanes = numberOfPlanes;
+            this._address = address;
+        }
+
+
+        public override void information(string name, string numberOfPlanes, string address)
+        {
+            Console.WriteLine(name + "\n" + numberOfPlanes + "\n" + address);
+        }
+
+    }
+
+    // static class
+    public static class Location
+    {
+        public static void _location()
+        {
+            Console.WriteLine("The Location of the AirPort: England-London");
+        }
+    }
+
+
+    // overloading
+    class space_airport
+    {
+        private string space_inside;
+        private string space_outside;
+        private string m;
+
+
+        public space_airport(string space_inside)
+        {
+            this.space_inside = space_inside;
+            Console.WriteLine(space_inside);
+        }
+
+        public space_airport(string space_outside, string m)
+        {
+            this.space_outside = space_outside;
+            Console.WriteLine(space_outside);
+            this.m = m;
+            Console.WriteLine("" + m);
+        }
+    }
+
+
+
+
+
+
+
+    class Employee
+    {
+        
+        // this is the overriding 
+        public virtual void numOfEmployees(int generalEmployees1)
+        {
+            Console.WriteLine("General Employees:  " + generalEmployees1);
+        }
+    }
+
+    // polymorphism
+    class reception_Employee : Employee
+    {
+
+        public override void numOfEmployees(int receptionEm)
+        {
+            Console.WriteLine("Reception Employees:  " + receptionEm);
+        }
+
+    }
+
+    class administration_Employee : Employee
+    {
+
+        public override void numOfEmployees(int administrationEm)
+        {
+            Console.WriteLine("Administration Employees:  " + administrationEm);
+        }
+
+    }
+
+    class chef_Employee : Employee
+    {
+
+        public override void numOfEmployees(int chefEm)
+        {
+            Console.WriteLine("Chefs:  " + chefEm);
+        }
+    }
+
+    class pilots_Employee : Employee
+    {
+
+        public override void numOfEmployees(int pilotsEm)
+        {
+            Console.WriteLine("Pilots:  " + pilotsEm);
+        }
+
+    }
+
+    class Passeneger
+    {
+        private string first_name;
+        private string last_name;
+        private string email;
+        private string address;
+        private string destination;
+        private string classes;
+
+
+
+
+        public string First_name
+        {
+            get
+            {
+                return first_name;
+            }
+            set
+            {
+                first_name = value;
+            }
+        }
+
+        public string Last_name
+        {
+            get
+            {
+                return last_name;
+            }
+            set
+            {
+                last_name = value;
+            }
+        }
+
+
+
+        public string Email
+        {
+            get
+            {
+                return email;
+            }
+            set
+            {
+                email = value;
+            }
+        }
+
+        public string Address
+        {
+            get
+            {
+                return address;
+            }
+            set
+            {
+                address = value;
+            }
+        }
+
+        public string Destination
+        {
+            get
+            {
+                return destination;
+            }
+            set
+            {
+                destination = value;
+            }
+        }
+
+        public string Classes
+        {
+            get
+            {
+                return classes;
+            }
+            set
+            {
+                classes = value;
+            }
+        }
+
+
+
+
+        public void showData()
+        {
+            
+            Console.WriteLine( "\nYour Ticket: "  +
+                "\nFirst name: " + first_name + "\n" +
+                "Last Name: " + last_name + "\n" +
+                "Email:" + email + "\n" +
+                "Address: " + address + "\n"
+                +"Destination: " + destination + "\n"
+                + "Type of class: " + classes);
+            
+
+        }
+
+        
+    }
+
+    class plane
+    {
+
+        protected int south_side_planes;
+        protected int north_side_planes;
+        protected int west_side_planes;
+        protected int east_side_planes;
+
+
+        public plane()
+        {
+
+        }
+
+
+
+
+
+    }
+
+
+   
+
+    // inheritance
+    class allplanes : plane
+    {
+        public allplanes(int south_side_planes, int north_side_planes, int west_side_planes,
+            int east_side_planes)
+        {
+            this.south_side_planes = south_side_planes;
+            this.north_side_planes = north_side_planes;
+            this.west_side_planes = west_side_planes;
+            this.east_side_planes = east_side_planes;
+        }
+
+        public void numOfAllPlanes()
+        {
+            Console.WriteLine("Number of planes in south side: " + south_side_planes);
+            Console.WriteLine("Number of planes in north side: " + north_side_planes);
+            Console.WriteLine("Number of planes in west side: " + west_side_planes);
+            Console.WriteLine("Number of planes in east side: " + east_side_planes);
+        }
+    }
+
+
+
+
+
+
+    class destination
+    {
+        public void destinations()
+        {
+            Console.WriteLine("1- To Dubai: \n Economy= 800$ \t Bussiness= 4000$ \n");
+            Console.WriteLine("2- To Istanbul: \n Economy= 600$ \t Bussiness= 3800$ \n");
+            Console.WriteLine("3- To Paris: \n Economy= 300$ \t Bussiness= 1900$ \n");
+            Console.WriteLine("4- To Madrid: \n Economy= 300$ \t Bussiness= 1900$ \n");
+            Console.WriteLine("5- To NewYork: \n Economy= 2000$  Bussiness= 7000$ \n");
+            Console.WriteLine("6- To Tokoyo: \n Economy= 2500$  Bussiness= 8000$ \n");
+            Console.WriteLine("7- To Doha: \n Economy= 800$ \t Bussiness= 4000$ \n");
+        }
+    }
+
+    class desiform
+    {
+        public void destination_infor()
+        {
+            destination de = new destination();
+            de.destinations();
+        }
+    }
+
+
+    
+
+    class showinform
+    {
+        public void show_information()
+        {
+            // displaying information of the airport
+            string name = "Name: Grand AirPort";
+            string numberOfPlanes = "Number of Planes: 40";
+            string address = "Address: 2323 Airport highway";
+            Airport_information myAirport = new Airport_information(name, numberOfPlanes, address);          
+            myAirport.information(name, numberOfPlanes, address);
+
+            // static
+            Location._location();
+        }
+    }
+
+    class spaceinform
+    {
+        public void space_information()
+        {
+            // Airport space inside
+            space_airport sp1 = new space_airport("The Airport space inside is: 200 square meters");
+            // Airport space outside
+            space_airport sp2 = new space_airport("he Airport space outside is: 700 square meters");
+        }
+    }
+
+    class employinform
+    {
+        
+        public void employee_information()
+        {
+            // the father class of employee
+            Employee em = new Employee();
+            em.numOfEmployees(200);
+
+            // the son class of employee
+            Employee em1 = new reception_Employee();
+            em1.numOfEmployees(100);
+
+            // the son class of employee
+            Employee em2 = new administration_Employee();
+            em2.numOfEmployees(50);
+
+            // the son class of employee
+            Employee em3 = new chef_Employee();
+            em3.numOfEmployees(10);
+
+            // the son class of employee
+            Employee em4 = new pilots_Employee();
+            em4.numOfEmployees(40);
+        }
+    }
+
+    class passengerinform
+    {
+        public void passenger_information()
+        {
+            Passeneger c = new Passeneger();
+
+            Console.WriteLine("Enter your first name: ");
+            c.First_name = Console.ReadLine();
+            Console.WriteLine("Enter your last name: ");
+            c.Last_name = Console.ReadLine();
+            Console.WriteLine("Enter your email: ");
+            c.Email = Console.ReadLine();
+            Console.WriteLine("Enter your address: ");
+            c.Address = Console.ReadLine();
+            Console.WriteLine("Enter your destination: ");
+            c.Destination = Console.ReadLine();
+            Console.WriteLine("Economy class or Bussiness class: ");
+            c.Classes = Console.ReadLine();
+
+
+            c.showData();
+            
+        }
+    }
+
+
+    class planeinform
+    {
+        public void plane_information()
+        {
+            //plane ro = new plane();
+            allplanes al = new allplanes(10, 10, 10, 10);
+            al.numOfAllPlanes();
+        }
+    }
+
+
+
+
+    class result
+    {
+        public void login()
+        {
+            here:
+            // registering to access the system of the airort
+            Console.Write("Enter password: ");
+            string password = Console.ReadLine();
+
+            if (password == "123")
+            {
+                Console.Clear();
+                Console.WriteLine("Login to the system successfully \n");
+
+
+                there:
+                Console.WriteLine("\n\n \t\t\t\t\tS.No \t Functions \t\t\t  \n\n");
+                Console.WriteLine(" \t\t\t\t\t(1)\t Information about the AirPort \t\t\t  \n");
+                Console.WriteLine(" \t\t\t\t\t(2)\t Employees \t\t\t  \n ");
+                Console.WriteLine(" \t\t\t\t\t(3)\t Register passengers data \t\t\t  \n");
+                Console.WriteLine(" \t\t\t\t\t(4)\t Planes \t\t\t  \n");
+                Console.WriteLine(" \t\t\t\t\t(5)\t AirPort space \t\t\t   \n");
+                Console.WriteLine(" \t\t\t\t\t(6)\t Destinations and Prices \t\t\t   \n");
+                Console.WriteLine(" \t\t\t\t\t(7)\t Exit");
+
+
+
+                
+                Console.WriteLine("Enter a number to choose a function: ");
+                string num = Console.ReadLine();
+                
+                if (num == "1" || num == "2" || num == "3" || num == "4"
+                    || num == "5" || num == "6" || num == "7")
+                {
+                    if (num == "1")
+                    {
+                        // class that shows information of the hotel
+                        Console.Clear();
+                        showinform sh = new showinform();
+                        sh.show_information();                        
+                        goto there;
+
+                        
+           
+                    }
+                    else if (num == "2")
+                    {
+                        // class that shows number of employees
+                        Console.Clear();
+                        employinform em = new employinform();
+                        em.employee_information();
+                        goto there;
+                    }
+                    else if (num == "3")
+                    {
+                        // class that shows passenger information
+                        Console.Clear();
+                        passengerinform cu = new passengerinform();
+                        cu.passenger_information();
+                        goto there;
+                    }
+
+                    else if (num == "4")
+                    {
+                        // class to show number of planes in all floors
+                        Console.Clear();
+                        planeinform roo = new planeinform();
+                        roo.plane_information();
+                        goto there;
+                    }
+
+                    else if (num == "5")
+                    {
+                        // the class to show the space of the Airport
+                        Console.Clear();
+                        spaceinform spa = new spaceinform();
+                        spa.space_information();
+                        goto there;
+                    }
+                    else if(num == "6")
+                    {
+                        Console.Clear();
+                        desiform des = new desiform();
+                        des.destination_infor();
+                        goto there; 
+                    }
+                    else if (num == "7")
+                    {
+                        Console.Clear();
+                        return;
+                    }
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("\n Choose a number (1-7), please! ");
+                    goto there;
+                }
+                
+            }
+            else
+            {
+                Console.WriteLine("Access Denied");
+                goto here;
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("\n*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*");
+
+            Console.WriteLine("+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+");
+            Console.WriteLine("\n\t\t_________ WELCOME TO GRAND AIRPORT __________\n\n");
+
+            Console.WriteLine("\n+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+");
+            Console.WriteLine("*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*");
+
+
+            result re = new result();
+            re.login();
+
+
+
+
+
+
+
+
+
+
+
+
+            //Console.BackgroundColor=ConsoleColor.DarkBlue;
+            //Console.Clear();
+
+
+
+            //Console.ReadKey();
+
+
+
+
+        }
+
+
+    }
+}
+
+
+
